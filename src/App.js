@@ -1,23 +1,30 @@
-import logo from './logo.svg';
+import {useState, useEffect} from 'react';
+import { LoadImages, SearchImages } from './components/api'
 import './App.css';
+import Image from './components/image'
 
 function App() {
+  const [query, setQuery] = useState()
+  const [searchQ, setSearch] = useState()
+  const data = LoadImages();
+  console.log(query);
+  const search = () => {
+    setSearch(query)
+   
+  }
+  const searchData = SearchImages(query);
+  console.log(SearchImages(query))
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>
+        <input type = "test" onChange={(event) => setQuery(event.target.value)}/>
+        <button onClick = {search}>Search</button>
+      </div>
+      <div>
+      {data.map((img,key) => (
+        <Image src = {img.urls.thumb} key = {key}/>
+    ))}
+      </div>
     </div>
   );
 }
