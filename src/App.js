@@ -7,8 +7,6 @@ function App() {
   const [queryQ, setSearch] = useState();
   const data = LoadImages();
   // console.log(data);
-
-
   const search = () => {
     console.log(query);
     setSearch(query);
