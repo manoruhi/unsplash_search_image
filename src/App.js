@@ -16,7 +16,7 @@ function App() {
   return (
     <div className="App" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
       <div class="input-group m-2" style={{ width: 100 + "vh", display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-        <input type="search" style={{ width: 10 + "vh" }} className="form-control rounded" placeholder="Search Your Image" aria-label="Search" aria-describedby="search-addon" onChange={(event) => setQuery(event.target.value)} />
+        <input type="search" style={{ width: 10 + "vh" }} className="form-control rounded" placeholder="Search Your Images" aria-label="Search" aria-describedby="search-addon" onChange={(event) => setQuery(event.target.value)} />
         <button type="button" className="btn btn-outline-primary" onClick={search}>search</button>
       </div>
       <div className='contain'>
